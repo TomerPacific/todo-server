@@ -22,7 +22,6 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// const serviceAccount = require("./config/firebaseServiceAccountKey.json");
 const serviceAccount = {
   "type": process.env.type,
   "project_id": process.env.project_id,
