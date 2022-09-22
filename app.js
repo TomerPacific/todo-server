@@ -36,7 +36,12 @@ const serviceAccount = {
 };
 
 admin.initializeApp({
-  credential: admin.credential.cert(JSON.parse(serviceAccount)),
+  credential: admin.credential.cert({
+    type: process.env.type,
+    projectId: process.env.project_id,
+    privateKey: process.env.private_key.replace(/\\n/g, '\n'),
+    clientEmail: process.env.client_email
+  }),
   databaseURL: "https://todo-tomer.firebaseio.com"
 });
 
